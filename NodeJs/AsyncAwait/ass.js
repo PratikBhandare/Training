@@ -18,3 +18,9 @@ console.log(ifValid1);
 
 let ifValid2=await fetchUserData(-1,"Jon").catch(res=>{return res;})
 console.log(ifValid2);
+
+
+const b= Buffer.alloc(10);
+b.write("Hello")
+
+console.log(b);
