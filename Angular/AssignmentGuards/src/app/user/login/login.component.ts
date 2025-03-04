@@ -18,7 +18,7 @@ export class LoginComponent {
   }
 
   LogInForm = new FormGroup({
-    email: new FormControl(''),
+    email: new FormControl('',va),
     password: new FormControl(''),
 
   })

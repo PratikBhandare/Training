@@ -8,7 +8,7 @@
         <p class="name">{{product.title}}</p>
         <p class="price">Price: {{product.price}}</p>
         <button *ngIf="pdetails">Details</button><br><br>
-        <button  (click)="addToCart(product.id)" [ngStyle]="pdetails?{background:'green',color:'white'}:{background:'yellow',color:'white'}">Add to Cart</button>
+        <button  (click)="addToCart(product.id)" [ngStyle]="pdetails?{background:'green',color:'white'}:{background:'yellow',prcolor:'white'}">Add to Cart</button>
     </div>
 </div>
 
@@ -23,7 +23,8 @@
     </div>
 </div>
 
+<!-- <app-product-card [products]="products" [filterd]="filterd"></app-product-card> -->
 
 
 
-<button routerLink="/addproduct" *ngIf="pdetails">Add Products</button>
+<button *ngIf="pdetails" routerLink="/addproduct" >Add Products</button>

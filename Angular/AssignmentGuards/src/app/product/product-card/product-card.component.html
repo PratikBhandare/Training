@@ -1,0 +1,22 @@
+<h1>Hello</h1>
+<p>hello</p>
+<div class="product-grid" *ngIf="filterd.length>0">
+    <div *ngFor="let product of filterd" class="product-card" >
+        <img src="{{product.image}}" alt="">
+        <p class="name">{{product.title}}</p>
+        <p class="price">Price: {{product.price}}</p>
+        <button *ngIf="pdetails">Details</button><br><br>
+        <button  (click)="addToCart(product.id)" [ngStyle]="pdetails?{background:'green',color:'white'}:{background:'yellow',prcolor:'white'}">Add to Cart</button>
+    </div>
+</div>
+
+
+<div class="product-grid" *ngIf="filterd.length==0">
+    <div *ngFor="let product of products" class="product-card">
+        <img src="{{product.image}}" alt="">
+        <p class="name">{{product.title}}</p>
+        <p class="price">Price: {{product.price}}</p>
+        <button *ngIf="pdetails">Details</button><br><br>
+        <button  (click)="addToCart(product.id)" [ngStyle]="pdetails?{background:'green',color:'white'}:{background:'red',color:'white'}">Add to Cart</button>
+    </div>
+</div>

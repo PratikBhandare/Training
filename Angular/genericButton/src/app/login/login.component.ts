@@ -9,15 +9,19 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent {
   loginForm=new FormGroup({
-    email:new FormControl("",Validators.required),
-    password:new FormControl(''),
+    email:new FormControl(""),
+    password:new FormControl('',[Validators.minLength(8),Validators.required]),
 
     
   })
 
   login(){
-    if(this.loginForm.valid){
+    if(!this.loginForm.valid){
       console.log("Not valid form");
+      if(this.loginForm.get("password")?.invalid){
+        console.log("Password Error !!");
+        
+      }
       
     }
     console.log(this.loginForm.value);

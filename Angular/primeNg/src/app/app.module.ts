@@ -8,6 +8,10 @@ import {ButtonModule} from 'primeng/button';
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DatePickerModule } from 'primeng/datepicker';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CheckboxModule } from 'primeng/checkbox';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,14 @@ import { providePrimeNG } from 'primeng/config';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ButtonModule
+    ButtonModule,
+    ReactiveFormsModule,
+    DatePickerModule,
+    FormsModule,
+    HttpClientModule,
+    CheckboxModule
+
+    
     
   ],
   providers: [

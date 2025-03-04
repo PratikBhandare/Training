@@ -4,6 +4,7 @@
 <form [formGroup]="loginForm">
     <input type="text" formControlName="email" ><br>
     <input type="text" formControlName="password" ><br><br>
+    <button [disabled]="loginForm.invalid" (click)="login()">LOgin</button>
 
-    <app-g-button [label]="'Login'" [color]="'green'" (Onclick)="login()"></app-g-button>
+    <app-g-button [label]="'Login'" [color]="'green'" (Onclick)="login()" ></app-g-button>
 </form>

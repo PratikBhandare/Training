@@ -2,3 +2,15 @@
   <p-button label="Check" (onClick)="hello()"/>
 </div>
 
+
+<form [formGroup]="form" (submit)="hello()">
+  <p-date-picker formControlName="date" [(ngModel)]="Date" [showIcon]="true" [iconDisplay]="'input'"></p-date-picker>
+  
+</form>
+
+<p-check-box value="india" (click)="cHello(Country)" [(ngModel)]="Country" inputId="Country">India</p-check-box>
+  <label for="Country">India</label>
+
+<p-check-box value="Russia" (click)="cHello(Country)" [(ngModel)]="Country" inputId="Country"></p-check-box>
+<p-check-box value="Japan" (click)="cHello(Country)" [(ngModel)]="Country" inputId="Country"></p-check-box>
+

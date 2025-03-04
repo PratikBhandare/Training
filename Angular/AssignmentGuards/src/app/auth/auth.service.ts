@@ -61,9 +61,11 @@ export class AuthService {
 
   logOut(){
     this.isLogged=false;
-    this.isLoggedSubject.next(false)
+    this.isLoggedSubject.next(false);
+    if(this.isAdmin){
+      this.isAdmin=false;
+    }
     
-    this.isAdmin=false;
  
   }
 
