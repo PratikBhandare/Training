@@ -9,12 +9,13 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { AdminGUard } from '../auth/admin.guard';
 import { ManagerGuard } from '../auth/manager.guard';
+import { CustomerGuard } from '../auth/customer.guard';
 
 const routes:Routes=[
   {path:"addproduct",component:AddproductComponent,canActivate:[AdminGUard]},
   // {path:"product/productlist",component:ProductlistComponent, canActivate:[LogInGuard]},
   // {path:"product/productlist",component:ProductlistComponent},
-  {path:"product/productlist/productdetails",component:ProductdetailsComponent,canActivate:[ManagerGuard]},
+  {path:"product/productlist/productdetails",component:ProductdetailsComponent,canActivate:[CustomerGuard]},
   {path:"product/productlist",component:ProductlistComponent},
 ];
 

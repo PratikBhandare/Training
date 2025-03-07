@@ -1,4 +1,4 @@
-const { log } = require("console");
+
 const fm = require("./Module/fileManagement")
 const p=require("process")
 // setInterval(() => {
@@ -7,13 +7,17 @@ const p=require("process")
 // }, 5000);
 
 
+fm.fileWrite("Hello.txt");
 fm.fileWrite("Hello.txt","Hello");
-fm.fileAppend("Hello.txt","\nThis is Appended Content");
+
 fm.fileRead("Hello.txt")
-fm.fileDelet("Hello.txt");
+
+// fm.fileAppend("Hello.txt","\nThis is Appended Content");
+
+// fm.fileDelet("Hello.txt");
 
 
-console.log("Node Js Version:",p.version);
-console.log("Platfrom:",p.platform);
-console.log("Process ID:",p.pid);
+// console.log("Node Js Version:",p.version);
+// console.log("Platfrom:",p.platform);
+// console.log("Process ID:",p.pid);
 

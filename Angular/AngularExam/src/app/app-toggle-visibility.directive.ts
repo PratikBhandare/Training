@@ -7,7 +7,7 @@ import { Directive, ElementRef, Input, OnChanges, Renderer2, SimpleChanges } fro
 export class AppToggleVisibilityDirective implements OnChanges{
 
 
-  @Input() appToggleVisibility: boolean = false;
+  @Input('appAppToggleVisibility') appToggleVisibility: boolean = false;
   @Input() delay: number = 0;
 
   constructor(private el: ElementRef, private renderer: Renderer2) { }

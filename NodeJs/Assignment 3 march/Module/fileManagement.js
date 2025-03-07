@@ -10,12 +10,18 @@ function fileWrite(filename,data){
     // console.log( `${filename}`);
     if(!data){
         data='';
+        fs.writeFile(`${filename}`,`${data}`,()=>{
+            console.log("File Created succesfully!....");
+            
+        });
+    }else{
+        fs.writeFile(`${filename}`,`${data}`,()=>{
+            console.log("Datais written seccesfully!....");
+            
+        });
     }
 
-    fs.writeFileSync(`${filename}`,`${data}`,()=>{
-        console.log("File is Created!....");
-        
-    });
+    
 }
 
 function fileAppend(filename,data){
@@ -29,11 +35,12 @@ function fileAppend(filename,data){
     });
 }
 
-function fileRead(filename){
+async function fileRead(filename){
+
     console.log( `Reading ${filename} in 3 seconds...`);
     
     setTimeout(() => {
-        fs.readFile(`${filename}`,'utf-8',(err,data)=>{
+         fs.readFile(`${filename}`,'utf-8',(err,data)=>{
             console.log("Data:",data);
         })
     }, 3000);

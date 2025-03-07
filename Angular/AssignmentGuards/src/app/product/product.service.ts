@@ -25,19 +25,23 @@ export class ProductService implements OnInit {
   constructor(private authservice: AuthService, private router: Router, private http:HttpClient) {
     this.authservice.loggedUser$.subscribe(val => {
       this.loggedUser = val;
+    },(err)=>{console.log(err);
     })
     this.authservice.isLogged$.subscribe(val => {
       this.isLogged = val;
+    },(err)=>{console.log(err);
     })
 
-    this.http.get("https://fakestoreapi.com/products").subscribe(val=>{
+    this.http.get("https://fakestoreapi.com/products").subscribe((val)=>{
     this.a=val;console.log(this.a);
     this.products=[...this.products,...this.a];
     console.log(this.p);
-    
-    
-    
-    
+    },(err)=>{
+      console.log(err);
+      
+    },()=>{
+      console.log("DOne....!!");
+      
     });
     // console.log(this.a);
     

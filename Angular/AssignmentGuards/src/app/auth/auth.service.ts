@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,11 @@ export class AuthService {
   isLogged!:boolean;
   isLoggedSubject=new BehaviorSubject<boolean>(false);
   isLogged$=this.isLoggedSubject.asObservable();
+
   isAdmin!: boolean;
   isManager!:boolean;
+
+
   loggedUserSubject=new BehaviorSubject<{}>({});
   loggedUser$=this.loggedUserSubject.asObservable();
 
