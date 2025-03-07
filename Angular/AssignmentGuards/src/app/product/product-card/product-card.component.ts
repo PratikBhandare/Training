@@ -9,7 +9,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 })
 export class ProductCardComponent implements OnChanges {
 ngOnChanges(changes: SimpleChanges): void {
-  throw new Error('Method not implemented.');
+  // throw new Error('Method not implemented.');
 }
 @Input() filterd: any[]=[];
 @Input() pdetails: any;
