@@ -154,8 +154,8 @@ export class ProductService implements OnInit {
       //   filter.push(this.products[i])
       //   this.filterdProductsSubject.next(filter);
       //   console.log("GOt");
-
       // }
+      
       if ((this.products[i]).title.toLowerCase().includes(term.toLowerCase())) {
         filter.push(this.products[i])
         this.filterdProductsSubject.next(filter);

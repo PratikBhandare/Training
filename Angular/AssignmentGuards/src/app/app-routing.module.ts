@@ -9,9 +9,8 @@ import { CustomerGuard } from './auth/customer.guard';
 
 const routes: Routes = [
   {path:"",component:ProductlistComponent},
-  
-  // {path:"admin",component:AdminComponent, canActivate:[LogInGuard,RoleGuard]}
-  {path:"user",loadChildren:()=>import("./user/user.module").then(m=>m.UserModule)},
+  // {path:"user",loadChildren:()=>import("./user/user.module").then(m=>m.UserModule)},
+  {path:"user",loadChildren:()=>import("./user/user-routing.module").then(m=>m.UserRoutingModule)},
   {path:"order",loadChildren:()=>import("./order/order.module").then(m=>m.OrderModule),canLoad:[CustomerGuard]},
   {path:"product",loadChildren:()=>import("./product/product.module").then(m=>m.ProductModule)},
 ];

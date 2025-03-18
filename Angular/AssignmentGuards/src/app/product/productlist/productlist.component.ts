@@ -11,7 +11,7 @@ import { BehaviorSubject, debounce, debounceTime } from 'rxjs';
   templateUrl: './productlist.component.html',
   styleUrl: './productlist.component.css'
 })
-export class ProductlistComponent implements OnInit,OnChanges{
+export class ProductlistComponent implements OnInit{
   sSubject=new BehaviorSubject<string>('')
   
   filterd!:any[];
@@ -46,23 +46,10 @@ export class ProductlistComponent implements OnInit,OnChanges{
     // this.loggedUserEmail=this.authService.loggedUser.email;
     
   }
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
-    
-  }
-  // change(s:string){
-  //   console.log(s);
-  //   this.searchProduct(s);
-    
-
-  // }
 
   change(s:string){
     console.log(s);
     this.sSubject.next(s)
-
-    
-
   }
 
 
@@ -77,9 +64,6 @@ export class ProductlistComponent implements OnInit,OnChanges{
     console.log(this.filterd)
   }
 
-  log(){
-    console.log("Hello !!");
-  }
   
   
 

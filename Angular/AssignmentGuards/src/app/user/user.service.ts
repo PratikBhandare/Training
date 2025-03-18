@@ -7,7 +7,6 @@ import { AuthService } from '../auth/auth.service';
 export class UserService  {
 
   person:any;
-  
 
   constructor(private Authservice:AuthService) {
     

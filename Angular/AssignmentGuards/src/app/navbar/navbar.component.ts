@@ -8,9 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  toggleNav() {
-    const nav = document.querySelector('.nav-links') as HTMLElement;
-    nav.classList.toggle('nav-active');
-  }
+
 
 }
