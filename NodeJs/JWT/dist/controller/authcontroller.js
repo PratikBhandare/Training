@@ -16,9 +16,12 @@ const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 class AuthController {
     login(req, resp) {
         let user = req.body;
-        let paylod = { email: user.email };
-        let token = jsonwebtoken_1.default.sign(paylod, "hello", { expiresIn: "1h" });
+        console.log(user);
+        // let paylod = {email:user.email,};
+        let token = jsonwebtoken_1.default.sign(user, "hello", { expiresIn: "1h" });
         resp.send(token);
+    }
+    signUp() {
     }
     getData(req, resp) {
         return __awaiter(this, void 0, void 0, function* () {

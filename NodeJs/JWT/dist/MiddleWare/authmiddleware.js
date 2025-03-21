@@ -14,7 +14,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateUser = validateUser;
 exports.jwtAuth = jwtAuth;
-const jwt = require("jsonwebtoken");
+// const jwt = require("jsonwebtoken");
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const bcrypt = require("bcrypt");
 const authservice_1 = __importDefault(require("../Services/authservice"));
 function validateUser(req, resp, next) {
@@ -39,7 +40,11 @@ function validateUser(req, resp, next) {
 }
 function jwtAuth(req, resp, next) {
     return __awaiter(this, void 0, void 0, function* () {
-        const authHeaders = req.headers;
-        console.log(authHeaders);
+        const authHeadersToken = req.headers.authorization;
+        console.log(authHeadersToken);
+        yield jsonwebtoken_1.default.verify(authHeadersToken, "hello", (err, data) => {
+            console.log(data);
+        });
+        next();
     });
 }

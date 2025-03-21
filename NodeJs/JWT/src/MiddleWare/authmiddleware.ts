@@ -1,4 +1,6 @@
-const jwt = require("jsonwebtoken");
+// const jwt = require("jsonwebtoken");
+import jwt, { TokenExpiredError } from "jsonwebtoken"
+import {Request} from "express";
 
 const bcrypt=require("bcrypt");
 
@@ -31,16 +33,14 @@ async function validateUser(req:Request,resp:Response,next:Function){
 }
 
 async function jwtAuth(req:Request,resp:Response,next:Function){
-    const authHeaders=req.headers;
-    console.log(authHeaders);
-    
-    
-    
+    const authHeadersToken=req.headers.authorization;
+    console.log(authHeadersToken);
 
-
-
-
-
+    await jwt.verify(authHeadersToken!,"hello",(err,data)=>{
+        console.log(data);
+        
+    })
+    next();
 }
 
 export {validateUser,jwtAuth}
