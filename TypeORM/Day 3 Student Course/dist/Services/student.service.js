@@ -38,5 +38,11 @@ class studentService {
             console.log(student.courses);
         });
     }
+    getStudents() {
+        return __awaiter(this, void 0, void 0, function* () {
+            let result = yield student_repo_1.studentRepo.createQueryBuilder().select().getMany();
+            console.log(result);
+        });
+    }
 }
 module.exports = new studentService();

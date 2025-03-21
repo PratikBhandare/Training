@@ -1,5 +1,5 @@
 import studentService from "../Services/student.service";
-import { Request } from "express";
+import { Request,Response } from "express";
 
 class studetController{
 
@@ -19,6 +19,11 @@ class studetController{
         await studentService.asignCourse(sid,cids)
         resp.send("Succes..")
 
+    }
+
+    async getStudents(req:Request,resp:Response){
+        await studentService.getStudents();
+        resp.send("Done..")
     }
 
 }

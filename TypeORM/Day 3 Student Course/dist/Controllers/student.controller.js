@@ -28,5 +28,11 @@ class studetController {
             resp.send("Succes..");
         });
     }
+    getStudents(req, resp) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield student_service_1.default.getStudents();
+            resp.send("Done..");
+        });
+    }
 }
 module.exports = new studetController();

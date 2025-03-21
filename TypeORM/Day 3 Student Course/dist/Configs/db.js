@@ -13,8 +13,8 @@ exports.AppDataSource = new typeorm_1.DataSource({
     password: '123456',
     database: 'JIBE_Main_Training',
     synchronize: true,
-    // logging:true,
-    entities: [student_1.Student, course_1.Course],
+    logging: true,
+    entities: [course_1.Course, student_1.Student],
     options: {
         encrypt: true,
         trustServerCertificate: true

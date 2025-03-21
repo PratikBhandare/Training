@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Student = void 0;
 const typeorm_1 = require("typeorm");
 const course_1 = require("./course");
+require("reflect-metadata");
 let Student = class Student {
 };
 exports.Student = Student;

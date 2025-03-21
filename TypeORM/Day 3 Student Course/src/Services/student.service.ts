@@ -1,11 +1,16 @@
 import { AppDataSource } from "../Configs/db";
+import { Student } from "../Entities/student";
 import { courseRepo } from "../Repositories/course.repo";
 import  {studentRepo}  from "../Repositories/student.repo";
-import {studentQueryBuilder} from "../Repositories/student.repo"
+
+
+
+
 
 
 
 class studentService{
+     
     async createStudent(student:any){
         if(student!.courses==undefined){
             student!.courses=[];
@@ -47,7 +52,9 @@ class studentService{
     }
 
     async getStudents(){
-        studentQueryBuilder.select()
+        let result=await studentRepo.createQueryBuilder().select().getMany();
+        console.log(result);
+        
     }
 }
 

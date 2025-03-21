@@ -13,8 +13,8 @@ export const AppDataSource = new DataSource({
     password:'123456',
     database:'JIBE_Main_Training',
     synchronize:true,
-    // logging:true,
-    entities: [Student,Course],
+    logging:true,
+    entities: [Course,Student],
     options:{
         encrypt:true,
         trustServerCertificate:true
